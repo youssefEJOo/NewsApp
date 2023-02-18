@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.route.newsapp.ui.news_details_activity.NewsDetailsActivity"/>
+        <variable
+            name="binding"
+            type="NewsDetailsActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.news_details_activity.NewsDetailsActivity">
+
+        <ImageView
+            android:id="@+id/pic_full_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            UrlToImage="@{binding.article.urlToImage}"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/author_full_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/pic_full_article"
+            app:layout_constraintStart_toStartOf="@id/pic_full_article"
+            android:text="@{binding.article.author}"
+            />
+        <TextView
+            android:id="@+id/title_full_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/author_full_article"
+            app:layout_constraintStart_toStartOf="@id/author_full_article"
+            android:textColor="@color/black"
+            android:text="@{binding.article.title}"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/publishAt_full_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title_full_article"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{binding.article.publishedAt}"
+            />
+        <TextView
+            android:id="@+id/content_full_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/publishAt_full_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{binding.article.content}"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="35dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/content_full_article"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
